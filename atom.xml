@@ -4,7 +4,7 @@
   <title><![CDATA[Playing By Programming]]></title>
   <link href="http://cjbrock.github.com/atom.xml" rel="self"/>
   <link href="http://cjbrock.github.com/"/>
-  <updated>2012-10-03T15:42:12-04:00</updated>
+  <updated>2012-10-03T15:56:45-04:00</updated>
   <id>http://cjbrock.github.com/</id>
   <author>
     <name><![CDATA[Corinna Brock]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hi Again]]></title>
+    <link href="http://cjbrock.github.com/blog/2012/10/03/hi-again/"/>
+    <updated>2012-10-03T15:55:00-04:00</updated>
+    <id>http://cjbrock.github.com/blog/2012/10/03/hi-again</id>
+    <content type="html"><![CDATA[<p>Second Post try.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
