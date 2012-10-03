@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Playing By Programming]]></title>
-  <link href="http://cjbrock.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Sublime -  Plugins | Playing By Programming]]></title>
+  <link href="http://cjbrock.github.com/blog/categories/sublime-plugins/atom.xml" rel="self"/>
   <link href="http://cjbrock.github.com/"/>
   <updated>2012-10-03T17:41:28-04:00</updated>
   <id>http://cjbrock.github.com/</id>
@@ -18,29 +18,11 @@
     <link href="http://cjbrock.github.com/blog/2012/10/03/productivity/"/>
     <updated>2012-10-03T16:51:00-04:00</updated>
     <id>http://cjbrock.github.com/blog/2012/10/03/productivity</id>
-    <content type="html"><![CDATA[<p>Yesterday was our first day of the Flatiron school. We actually spent most of the day working on our student profiles.  It was a group assignment, but my group decided to work on our profile pages individually while all of the other groups worked on them as a team. As I went home last night (admittedly after a 10 hour day) I felt incredibly drained and vaguely separated from the group as a whole. Today, while Avi was going over how our group projects went yesterday, one of our classmates noted that being in the middle of the table groupings, we were the only group that didn&#8217;t have a corner or area in which people could gather.  Since the task today was to set up our environments in groups, and mindful of my feeling of separateness yesterday, I suggested that we go work on the couches. It seemed to work much better. I felt a real sense of camaraderie with my group, and I feel like everyone came away with a much better understanding of the topics that we were assigned.</p>
+    <content type="html"><![CDATA[<p>Yesterday was our first day of the Flatiron school. We actually spent most of the day working on our student profiles.  It was a group assignment, but my group decided to work on our profile pages individually while all of the other groups worked on them as a team. As I went home last night (admittedly after a 10 hour day) I felt incredibly drained and vaguely separated from the group as a whole. Today, while Avi was going over how our group projects went yesterday, one of our classmates noted that being in the middle of the table groupings, we were the only group that didn't have a corner or area in which people could gather.  Since the task today was to set up our environments in groups, and mindful of my feeling of separateness yesterday, I suggested that we go work on the couches. It seemed to work much better. I felt a real sense of camaraderie with my group, and I feel like everyone came away with a much better understanding of the topics that we were assigned.</p>
 
 <p>In the afternoon, we started working on our Octopress blogs.  Only being familiar with blogs that are basically one-click setups, the process of setting up the blog was surprisingly easy until I tried to deploy for the first time.  While the setup instructions for the hosting of the blog are incredibly detailed, the process of committing, pushing, generating, and deploying was less so.  Luckily one of my classmates had figured it out, and so he helped walk me through it.  Between the two of us, we figured out the step I was missing and got my first post published! There are actually five steps to making sure the post is published correctly. I also published my second one, which was a test to try to figure out why one of my other classmates publishing wasn’t working.  That issue ended up being an incorrect symbol in the configuration file.</p>
 
 <p>One of the most overwhelming things I’m feeling right now is how many ways things can go wrong, and how non-specific error messages can be.  Google seems to be my best friend right now.  While setting up the blogs, several people were getting a Red Cloth error.  I tried to reinstall the gem, but manually installing it didn’t work.  I took to Google and found on Stack Overflow that it was actually a gcc-4.2 error, and there were a couple of lines of code needed to force the system to recognize the updated version and create the bundle install.  I had no idea that the solution would work, but I figured we might as well try it and see.  Low and behold, it actually worked! It felt good to be able to solve an issue that four other people were experiencing. I know I should enjoy these moments when the solutions are so easy, because they won’t stay that way for long.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hi Again]]></title>
-    <link href="http://cjbrock.github.com/blog/2012/10/03/hi-again/"/>
-    <updated>2012-10-03T15:55:00-04:00</updated>
-    <id>http://cjbrock.github.com/blog/2012/10/03/hi-again</id>
-    <content type="html"><![CDATA[<p>Second Post try.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://cjbrock.github.com/blog/2012/10/03/hello-world/"/>
-    <updated>2012-10-03T15:29:00-04:00</updated>
-    <id>http://cjbrock.github.com/blog/2012/10/03/hello-world</id>
-    <content type="html"><![CDATA[<p>Flatiron school blog here I come!</p>
 ]]></content>
   </entry>
   
