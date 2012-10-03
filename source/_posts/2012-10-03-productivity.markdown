@@ -3,7 +3,7 @@ layout: post
 title: "Productivity"
 date: 2012-10-03 16:51
 comments: true
-categories: [Environment Setup, Dotfiles, Dotfiles: Aliases, Dotfiles: Terminal Customization, Sublime, Sublime: Package Control, Sublime: Plugins,  Git, Git: SSH Keys, Git: Config, Git: Global Ignore, Postgres, Base, Octopress]
+categories: [Environment Setup, Dotfiles, Dotfiles - Aliases, Dotfiles - Terminal Customization, Sublime, Sublime -  Package Control, Sublime -  Plugins,  Git, Git -  SSH Keys, Git - Config, Git - Global Ignore, Postgres, Base, Octopress]
 ---
 
 Yesterday was our first day of the Flatiron school. We actually spent most of the day working on our student profiles.  It was a group assignment, but my group decided to work on our profile pages individually while all of the other groups worked on them as a team. As I went home last night (admittedly after a 10 hour day) I felt incredibly drained and vaguely separated from the group as a whole. Today, while Avi was going over how our group projects went yesterday, one of our classmates noted that being in the middle of the table groupings, we were the only group that didn't have a corner or area in which people could gather.  Since the task today was to set up our environments in groups, and mindful of my feeling of separateness yesterday, I suggested that we go work on the couches. It seemed to work much better. I felt a real sense of camaraderie with my group, and I feel like everyone came away with a much better understanding of the topics that we were assigned. 
