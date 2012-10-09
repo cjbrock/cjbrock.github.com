@@ -9,7 +9,7 @@
 $main-color:  #172136;
 
 //This controls the background. 
-$page-bg: #ecf0eb;
+$page-bg: darken($header-bg, 50);
 
 //This controls the header. 
 $header-bg: #6bacb8;
