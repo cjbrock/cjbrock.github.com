@@ -17,7 +17,7 @@ $title-color: lighten($header-bg,100);
 $subtitle-color: #c4bdbc;
 
 //This controls the navigation bar
-$nav-bg: darken($header-bg, 20);
+$nav-bg: $page-bg;
 $nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
 $nav-link-color: darken($main-color, 20);
 $nav-link-color-hover: lighten($main-color, 20);
