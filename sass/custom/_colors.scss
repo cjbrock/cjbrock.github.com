@@ -12,9 +12,9 @@ $main-color:  #172136;
 $page-bg: #ecf0eb;
 
 //This controls the header. 
-$header-bg: darken($main-color,17);
+$header-bg: #172136;
 $title-color: lighten($header-bg,100);
-$subtitle-color: lighten($title-color,0);
+$subtitle-color: #c4bdbc;
 
 //This controls the navigation bar
 $nav-bg: desaturate(darken($main-color, 10), 60);
