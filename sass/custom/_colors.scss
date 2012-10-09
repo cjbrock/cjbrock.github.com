@@ -8,13 +8,13 @@
 //Pick your favorite color. If you picked a thoughtful blue, try again. 
 $main-color:  #172136;
 
-//This controls the background. 
-$page-bg: darken($header-bg, 50);
-
 //This controls the header. 
 $header-bg: #6bacb8;
 $title-color: lighten($header-bg,100);
 $subtitle-color: #c4bdbc;
+
+//This controls the background. 
+$page-bg: darken($header-bg, 50);
 
 //This controls the navigation bar
 $nav-bg: desaturate(darken($main-color, 10), 60);
