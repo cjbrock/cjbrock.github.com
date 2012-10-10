@@ -30,4 +30,4 @@ If you don't know if nil is an object, run it in IRB.
 {% img center /images/koans/nil_object.png 'Is Nil an Object' 'Is Nil an Object' %}
 
 ## 5. Google.
-If you're really and truly stuck and cannot figure out the error message (usually about 15 minutes is a good rule of thumb when trouble) try Googling Ruby Koans and Github.  Many, many, many people have completed and committed the Koans, and a lot of them have committed them. When in doubt, check out their code and try to write your own based off their solutions. Be sure to check out a couple different solutions - all solutions are definitely not created equal.
+If you're really and truly stuck and can't figure out the error message (usually about 15 minutes is a good rule of thumb when you're having trouble) try Googling Ruby Koans and Github.  Many, many, many people have completed and committed the Koans, and a lot of them have committed them. When in doubt, check out their code and try to write your own based off their solutions. Be sure to check out a couple different solutions - all solutions are definitely not created equal.
