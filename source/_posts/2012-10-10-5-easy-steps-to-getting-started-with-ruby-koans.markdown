@@ -13,7 +13,7 @@ Although the web page does offer you the option to run through the Koans online,
 ## 2. Read the Installing Ruby section (no, really).
 Even if you already have Ruby installed, walk through the Installing Ruby section of the webpage. it shows you how to get started with the Koans. To start the Koans, simply go to Terminal (or your choice of command line interface) and while in your Koans folder, type:
 {% img center /images/koans/path_to_enlightenment.png 'Path to Enlightenment' 'Path to Enlightenment' %}
-This will bring up your first test. You don't really need to know about testing to be able to get through the Koans, you just need to understand that whenever you see a line like this: ___ you need to delete it and fill it in with something else. The error message will point you directly to the file and line number.
+The error message will point you directly to the file and line number. This will bring up your first test. You don't really need to know about testing to be able to get through the Koans, you just need to understand that whenever you see a line like this: ___ you need to delete it and fill it in with something else. 
 
 
 
