@@ -12,7 +12,7 @@ I hope to see Ruby help every programmer in the world to be productive, and to e
 {% endblockquote %}
 [Matz](http://www.rubyist.net/~matz/) is a Japanese computer programmer and the creator of Ruby.  He released Ruby in December of 1995 as a productive language that was still fun to use, empahsizing the feeling of the language rather than striving for language perfection. Ruby is said to follow the principle of least astonishment, meaning that the language should behave in such a way as to minimize confusion for experienced users (at least if the user is Matz). Now working as the chief architect of [Heroku](http://www.heroku.com/), he is currently developing a new open-source lightweight Ruby project called [mruby](https://github.com/mruby/mruby).  
 
-The general Ruby community lives by the mantra: "Matz is nice, so we are nice".
+The Ruby community lives by the mantra: "Matz is nice, so we are nice".
 
 ## _why the lucky stiff
 {% img right /images/coders/why.jpg '_Why' '_why the lucky stiff' %}
