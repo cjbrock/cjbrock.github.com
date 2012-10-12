@@ -4,7 +4,7 @@
   <title><![CDATA[Playing By Programming]]></title>
   <link href="http://cjbrock.github.com/atom.xml" rel="self"/>
   <link href="http://cjbrock.github.com/"/>
-  <updated>2012-10-12T16:27:59-04:00</updated>
+  <updated>2012-10-12T16:29:03-04:00</updated>
   <id>http://cjbrock.github.com/</id>
   <author>
     <name><![CDATA[Corinna Brock]]></name>
@@ -20,7 +20,7 @@
     <id>http://cjbrock.github.com/blog/2012/10/12/4-coders-every-ruby-newbie-should-know</id>
     <content type="html"><![CDATA[<h2>Yukihiro &#8220;Matz&#8221; Matsumoto</h2>
 
-<p><img class="right" src="http://cjbrock.github.com/images/coders/matz.jpg" title="Matz" alt="Yukihiro "></p>
+<p><img class="right" src="http://cjbrock.github.com/images/coders/matzpic.jpg" title="Matz" alt="Yukihiro "></p>
 
 <blockquote><p>I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language.</p></blockquote>
 
