@@ -11,6 +11,7 @@ My name is Corinna Brock.  In my former lives, I have run the busiest bookstore 
 
 My languages include Ruby, Ruby on Rails, RubyMotion, HTML5, CSS3, Javascript, and JQuery.  I am also well versed in Github, CLI Basics, Server Setup, Databases, Deployment, Testing, Caching, and Security.
 
+{% img left /images/corinna_headshot.jpg 'Corinna Brock' 'Corinna Brock' %}
 In addition to design and programming, I enjoy reading, professional football, long distance cycling, dancing, and relaxing on the couch after climbing up the five flights of stairs to my apartment.
 
 You can find me at many places on the internet. I'm on [Github](http://github.cjbrock.com), [Octopress](http://cjbrock.github.com), [Twitter](http://twitter.com/cjnboston), [Linkedin](http://www.linkedin.com/profile/view?id=29204071), and [Pinterest](http://pinterest.com/cjnboston/). You can also feel free to [email me](mailto:corinna.brock@gmail.com).  
