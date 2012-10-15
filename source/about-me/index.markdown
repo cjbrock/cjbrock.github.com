@@ -12,7 +12,7 @@ My name is Corinna Brock.  In my former lives, I have run the busiest bookstore 
 Specializing in back-end work with an eye towards design, I love both facets of programming. The compulsively organized side of me wants to solve the problem in the best way possible, but the creative side of me wants it to be aesthetically pleasing at the same time. Programming allows me to combine both passions into one. I also bring a history of executive assistance to the table, giving me expertise in teamwork and customer service.
 
 {% img right /images/corinna_headshot.jpg 'Corinna Brock' 'Corinna Brock' %}
-My languages include Ruby, Ruby on Rails, RubyMotion, HTML5, CSS3, Javascript, and jQuery.  I am also well versed in Git, CLI Basics, Server Setup, Databases, Deployment, Testing, Caching, and Security.
+My languages include Ruby, Ruby on Rails, RubyMotion, HTML5, CSS3, Javascript, and jQuery.  Currently at the Flatiron school I am working to become well versed in Git, CLI Basics, Server Setup, Databases, Deployment, Testing, Caching, and Security.
 
 In addition to design and programming, I enjoy reading, professional football, long distance cycling, dancing, and relaxing on the couch after climbing up the five flights of stairs to my apartment.
 
