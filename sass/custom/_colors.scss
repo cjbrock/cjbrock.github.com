@@ -12,7 +12,7 @@ $main-color:  #172136;
 $page-bg: #6bacb8;
 
 //This controls the header. 
-$header-bg:{background-image:url('/images/chevron.png')} ;
+$header-bg: darken($page-bg, 20);
 $title-color: lighten($header-bg,100);
 $subtitle-color: #c4bdbc;
 
