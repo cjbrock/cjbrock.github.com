@@ -16,6 +16,8 @@ As a beginner, I'm already thinking:
 {% img left /images/RSpec/traffic.png 'Red Green Refactor' 'Red Green Refactor' %}
 ##Red-Green-Refactor
 If you've completed the [Ruby Koans](http://rubykoans.com/), you've already been exposed to testing syntax.  Testing in Ruby is done by a Red-Green-Refactor method. Basically, when you run your testing development tool, if the answer turns out red, your test fails. If it turns green, your test passes. And if it's blue, you should check out your code for a way to refactor it and make it more efficient.
+###YAGNI
+When you're writing an application, feature creep is bound to happen. 
 
 
 - talk about writing only what you need
