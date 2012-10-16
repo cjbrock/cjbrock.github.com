@@ -29,5 +29,5 @@ $link-color-hover: darken($main-color, 100);
 $link-color-visited: darken($main-color,10);
 $link-color-active: lighten($link-color-hover,10);
 
-$footer-bg: $subtitle-color !default;
-$footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($footer-bg, 11));
+$footer-bg: #9FC9D1 !default;
+//$footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($footer-bg, 11));
