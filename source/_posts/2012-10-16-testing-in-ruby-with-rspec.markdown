@@ -12,7 +12,7 @@ RSpec is a behaviour-driven development tool for Ruby programmers. Behavior-driv
 As a beginner, I'm already thinking:
 #Ok. What?
 
-{% img left /images/RSpec/trafficlight.png 'Red Green Refactor' 'Red Green Refactor' %}
+{% img left /images/RSpec/traffic.png 'Red Green Refactor' 'Red Green Refactor' %}
 ##Red-Green-Refactor
 If you've completed the [Ruby Koans](http://rubykoans.com/), you've already been exposed to testing syntax.  Testing in Ruby is done by a Red-Green-Refactor method. 
 
