@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Playing By Programming</title>
+  <meta name="author" content="Corinna Brock">
+
+  
+  <meta name="description" content="tl:dr - Testing is awesome. Do it a lot. Why do we test in Ruby? Ruby is a test-driven development language. Testing inherently shows you where your &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://cjbrock.github.com/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Playing By Programming" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35509616-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Playing By Programming</a></h1>
+  
+    <h2>My mind has an endless capacity for useless information.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:cjbrock.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about-me">About Me</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/16/testing-in-ruby-with-rspec/">Testing in Ruby With RSpec</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-16T08:58:00-04:00" pubdate data-updated="true">Oct 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>tl:dr - Testing is awesome. Do it a lot.</em></p>
+
+<p><img class="right" src="/images/RSpec/rubytesting.png" title="Red Green Refactor" alt="Red Green Refactor">
+Why do we test in Ruby? Ruby is a test-driven development language.  Testing inherently shows you where your application should go next. It allows you to specify the behavior that you think should happen before you write code to enact that behavior.  One of the most popular methods of testing in Ruby and Rails is <a href="http://rspec.info/">RSpec</a>.</p>
+
+<p>RSpec is a behavior-driven development tool for Ruby programmers. Behavior-driven development is an approach to software development that combines test-driven development, domain driven design, and acceptance test-driven planning. RSpec includes a command line program, text descriptions of examples and groups, customized reporting, expectation language, and built-in mocking/stubbing framework.</p>
+
+<p>As a beginner, I&#8217;m already thinking:</p>
+
+<h1>Ok. What?</h1>
+
+<p><img class="left" src="/images/RSpec/traffic.png" title="Red Green Refactor" alt="Red Green Refactor"></p>
+
+<h2>Red-Green-Refactor</h2>
+
+<p>If you&#8217;ve completed the <a href="http://cjbrock.github.com/blog/2012/10/10/5-easy-steps-to-getting-started-with-ruby-koans/">Ruby Koans</a>, you&#8217;ve already been exposed to testing syntax.  Testing in Ruby is done by a <a href="http://redgreenrefactor.eu/">Red-Green-Refactor</a> method. Basically, when you run your testing development tool, if the answer turns out red, your test fails. If it turns green, your test passes. And if it&#8217;s blue, you should check out your code for a way to refactor it and make it more efficient.</p>
+
+<h3><a href="http://en.wikipedia.org/wiki/You_ain't_gonna_need_it">YAGNI</a></h3>
+
+<p>When you&#8217;re writing an application, <a href="http://searchcio.techtarget.com/definition/feature-creep">feature creep</a> is bound to happen. If you can manage to stick to a test-driven method of development, you can keep feature creep to a minimum. It would be nice to immediately scale your website for a billion users, but YAGNI: You ain&#8217;t gonna need it.</p>
+
+<h2>Dos and Don&#8217;ts of Testing</h2>
+
+<p>Testing is actually very simple.  There are a few things to keep in mind, but overall if you trust your tests and allow them to guide your development you will not go wrong.</p>
+
+<h3>Dos:</h3>
+
+<ul>
+<li><em>Write your tests first</em><br/>
+The point of testing is to write the tests first, then write the code.  If you&#8217;re writing tests for code that you already think works, that&#8217;s not test driven development.</li>
+<li><em>Use contexts</em><br/>
+<a href="http://net.tutsplus.com/tutorials/ruby/ruby-for-newbies-testing-with-rspec/">Contexts</a> allow you to show the different behaviors of your application. They should simulate real-life situations.</li>
+<li><em>Use shared example groups</em><br/>
+<a href="http://blog.davidchelimsky.net/2010/11/07/specifying-mixins-with-shared-example-groups-in-rspec-2/">Shared example groups</a> allow you to define a method, and then call that method when testing.</li>
+<li><em>Test your edge cases</em><br/>
+It&#8217;s nice if your code works for the main bulk of your cases, but you must test your edge cases.</li>
+</ul>
+
+
+<h3>Don&#8217;ts:</h3>
+
+<ul>
+<li><em>Test the framework</em><br/>
+The framework works. Rails was tested as it was developed. There&#8217;s no point in wasting your time testing a framework that works.</li>
+<li><em>Test the implementation</em><br/>
+Again, the implementation works. Don&#8217;t waste your time.</li>
+<li><em>Get too clever</em><br/>
+Yes, you must use contexts and edge cases, but don&#8217;t drive yourself crazy trying to test every single possible outcome. We all know where the logical stopping point is - acknowledge and accept it.</li>
+</ul>
+
+
+<p><em>(Note: This blog post is a brief summarization of the testing techniques laid out by user Duien on <a href="https://speakerdeck.com/u/duien/p/testing-ruby">Speakerdeck</a>. Additional research and extrapolation is my own.)</em></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/12/4-coders-every-ruby-newbie-should-know/">4 Coders Every Ruby Newbie Should Know</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-12T14:00:00-04:00" pubdate data-updated="true">Oct 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Yukihiro &#8220;Matz&#8221; Matsumoto</h2>
+
+<p><img class="right" src="/images/coders/matzpic.jpg" title="Matz" alt="Yukihiro "></p>
+
+<blockquote><p>I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language.</p></blockquote>
+
+
+<p><a href="http://www.rubyist.net/~matz/">Matz</a> is a Japanese computer programmer and the creator of Ruby.  He released Ruby in December of 1995 as a productive language that was still fun to use, empahsizing the feeling of the language rather than striving for language perfection. Ruby is said to follow the principle of least astonishment, meaning that the language should behave in such a way as to minimize confusion for experienced users (at least if the user is Matz). Now working as the chief architect of <a href="http://www.heroku.com/">Heroku</a>, he is currently developing a new open-source lightweight Ruby project called <a href="https://github.com/mruby/mruby">mruby</a>.</p>
+
+<p>The Ruby community lives by the mantra: &#8220;Matz is nice, so we are nice&#8221;.</p>
+
+<h2>_why the lucky stiff</h2>
+
+<p><img class="right" src="/images/coders/why.jpg" title="_Why" alt="_why the lucky stiff"></p>
+
+<blockquote><p>When you don&#8217;t create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.</p></blockquote>
+
+
+<p>Although he committed <a href="http://www.urbandictionary.com/define.php?term=infocide">infocide</a> on August 19, 2009, _why is still one of the most influential Ruby programmers to date.  He is best known for <a href="http://mislav.uniqpath.com/poignant-guide/book/chapter-1.html">Why&#8217;s Poignant Guide to Ruby</a>, <a href="http://hackety.com/">Hackety Hack</a>, and the <a href="http://tryruby.org/">Try Ruby</a> interactive programming tutorial. He has also contributed several libraries and applications to the coder community. His love of programming and language speak to even new programmers, as illustrated by Annie Lowrey&#8217;s March 2012 Slate Magazine article <a href="http://www.slate.com/articles/technology/technology/2012/03/ruby_ruby_on_rails_and__why_the_disappearance_of_one_of_the_world_s_most_beloved_computer_programmers_.html">&#8220;Where&#8217;s _why?&#8221;</a>.</p>
+
+<h2>David Heinemeier Hansson</h2>
+
+<p><img class="right" src="/images/coders/hansson.jpg" title="Hansson" alt="David Heinemeier Hansson"></p>
+
+<blockquote><p>Flexibility is not free. It’s overrated. And if you trade that flexibility in for some constraints, you get a lot of complexity removed from the equation, you get a lot of productivity back from all the stuff you don’t have to do.</p></blockquote>
+
+
+<p><a href="https://twitter.com/dhh">Hansson</a> is a Danish programmer who created <a href="http://rubyonrails.org/">Ruby on Rails</a>, a web framework that is optimized for programmer productivity.  It abstracts away a lot of code processes, leading some to criticize the <a href="http://www.michaelharrison.ws/weblog/?p=159">&#8220;magic&#8221; of rails</a>. However, Rails allows programmers a high level of productivity faster with a less painful learning curve than other languages. Hansson is also a <a href="http://david.heinemeierhansson.com/racing">professional race car driver</a>.</p>
+
+<h2>Avi Flombaum</h2>
+
+<p><img class="right" src="/images/coders/avi.jpeg" title="Avi" alt="Avi Flombaum"></p>
+
+<blockquote><p>There’s a joy to programming. That’s the reason why we’re here…to experience the act of falling in love with programming.</p></blockquote>
+
+
+<p><a href="https://de.twitter.com/aviflombaum">Avi</a> is our fearless leader at the <a href="http://flatironschool.com">Flatiron School</a> in New York City. A programmer since the internet was born, Avi brings a love of code and a passion for teaching to the school. <a href="http://shitavisays.tumblr.com">Imminently quotable</a>, Avi also organizes one of the largest Rails meetups in the world, <a href="http://www.meetup.com/nyc-on-rails">NYC on Rails</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/10/5-easy-steps-to-getting-started-with-ruby-koans/">5 Easy Steps to Getting Started With Ruby Koans</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-10T15:02:00-04:00" pubdate data-updated="true">Oct 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://rubykoans.com/">Ruby Koans</a> are a great learning tool published by Jim Weirich and Joe O&#8217;Brien.  They will expose you to both Ruby basics and testing conventions, but getting started can be a little intimidating. I&#8217;ve found these five tips to be really helpful.</p>
+
+<h2>1. Download, don&#8217;t web-base.</h2>
+
+<p>Although the web page does offer you the option to run through the Koans online, it&#8217;s an abridged version and only offers 30 modules. It also doesn&#8217;t save your state, so if you can&#8217;t complete all 30 in one sitting you have to restart.</p>
+
+<h2>2. Read the Installing Ruby section (no, really).</h2>
+
+<p>Even if you already have Ruby installed, walk through the Installing Ruby section of the webpage. it shows you how to get started with the Koans. To start the Koans, simply go to Terminal (or your choice of command line interface) and while in your Koans folder, type:
+<img class="center" src="/images/koans/path_to_enlightenment.png" title="Path to Enlightenment" alt="Path to Enlightenment">
+The error message will point you directly to the file and line number. This will bring up your first test. You don&#8217;t really need to know about testing to be able to get through the Koans, you just need to understand that whenever you see a line like this: ___ you need to delete it and fill it in with something else.</p>
+
+<h2>3. Guess.</h2>
+
+<p>If you know about the Koans, chances are that you have a basic Ruby knowledge base. Our first assert tells us exactly what to do, which makes guessing is pretty easy.
+<img class="center" src="/images/koans/first_assert.png" title="First Assert" alt="First Assert">
+Once the assert is correct, go back to terminal and run ruby path_to_enlightement.rb again, and your test should pass.
+<img class="center" src="/images/koans/first_test_passed.png" title="First Test Passed" alt="First Test Passed"></p>
+
+<h2>4. When in doubt, test in IRB.</h2>
+
+<p>You can also test the code in IRB.  This will (almost) always give you the correct answer.
+<img class="center" src="/images/koans/about_nil.png" title="About Nil" alt="About Nil">
+If you don&#8217;t know if nil is an object, run it in IRB.
+<img class="center" src="/images/koans/nil_object.png" title="Is Nil an Object" alt="Is Nil an Object"></p>
+
+<h2>5. Google.</h2>
+
+<p>If you&#8217;re really and truly stuck and can&#8217;t figure out the error message (usually about 15 minutes is a good rule of thumb when you&#8217;re having trouble) try Googling Ruby Koans and Github.  Many, many, many people have completed and committed the Koans, and a lot of them have committed them. When in doubt, check out their code and try to write your own based off their solutions. Be sure to check out a couple different solutions - all solutions are definitely not created equal.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/03/hello-world/">Hello World</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-03T15:29:00-04:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Flatiron school blog here I come!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/10/16/testing-in-ruby-with-rspec/">Testing in Ruby with RSpec</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/12/4-coders-every-ruby-newbie-should-know/">4 Coders Every Ruby Newbie Should Know</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/10/5-easy-steps-to-getting-started-with-ruby-koans/">5 Easy Steps to Getting Started with Ruby Koans</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/03/hello-world/">Hello World</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/cjbrock">@cjbrock</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'cjbrock',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("cjnboston", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/cjnboston" class="twitter-follow-button" data-show-count="false">Follow @cjnboston</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Corinna Brock -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

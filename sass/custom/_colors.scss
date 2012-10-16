@@ -1,4 +1,4 @@
- //Here you can easily change your sites's color scheme.
+//Here you can easily change your sites's color scheme.
  
 $main-color:  #172136;
 
@@ -24,7 +24,7 @@ $sidebar-link-color: saturate($main-color, 100);
 $sidebar-link-color-hover:  darken($main-color, 100);
 
 //How links appear overall
-$link-color: darken($main-color, 10);
+$link-color: darken($main-color, 100);
 $link-color-hover: darken($main-color, 100);
 $link-color-visited: darken($main-color,10);
 $link-color-active: lighten($link-color-hover,10);
