@@ -20,8 +20,8 @@ $nav-link-color-visited: darken($main-color, 20);
 //This controls the sidebar
 $sidebar-bg: $subtitle-color;
 $sidebar-color: $page-bg;
-$sidebar-link-color: saturate($main-color, 100);
-$sidebar-link-color-hover:  darken($main-color, 100);
+$sidebar-link-color: darken($main-color, 20);
+$sidebar-link-color-hover:  lighten($main-color, 20);
 
 //How links appear overall
 $link-color: darken($main-color, 100);
