@@ -1,33 +1,33 @@
-// Here you can easily change your sites's color scheme.
+ //Here you can easily change your sites's color scheme.
  
-//$main-color:  #172136;
+$main-color:  #172136;
 
 //This controls the background. 
-//$page-bg: #6bacb8;
+$page-bg: #6bacb8;
 
 //This controls the header. 
-//$header-bg: darken($page-bg, 20);
-//$title-color: lighten($header-bg,100);
-//$subtitle-color: #c4bdbc;
+$header-bg: darken($page-bg, 20);
+$title-color: lighten($header-bg,100);
+$subtitle-color: #c4bdbc;
 
 //This controls the navigation bar
-//$nav-bg: $page-bg;
-//$nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
-//$nav-link-color: darken($main-color, 20);
-//$nav-link-color-hover: lighten($main-color, 20);
-//$nav-link-color-visited: darken($main-color, 20);
+$nav-bg: $page-bg;
+$nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
+$nav-link-color: darken($main-color, 20);
+$nav-link-color-hover: lighten($main-color, 20);
+$nav-link-color-visited: darken($main-color, 20);
 
 //This controls the sidebar
-//$sidebar-bg: $subtitle-color;
-//$sidebar-color: $page-bg;
-//$sidebar-link-color: saturate($main-color, 100);
-//$sidebar-link-color-hover:  darken($main-color, 100);
+$sidebar-bg: $subtitle-color;
+$sidebar-color: $page-bg;
+$sidebar-link-color: saturate($main-color, 100);
+$sidebar-link-color-hover:  darken($main-color, 100);
 
 //How links appear overall
-//$link-color: darken($main-color, 10);
-//$link-color-hover: darken($main-color, 100);
-//$link-color-visited: darken($main-color,10);
-//$link-color-active: lighten($link-color-hover,10);
+$link-color: darken($main-color, 10);
+$link-color-hover: darken($main-color, 100);
+$link-color-visited: darken($main-color,10);
+$link-color-active: lighten($link-color-hover,10);
 
-//$footer-bg: $subtitle-color !default;
-//$footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($footer-bg, 11));
+$footer-bg: $subtitle-color !default;
+$footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($footer-bg, 11));
