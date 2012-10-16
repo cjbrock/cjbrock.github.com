@@ -9,7 +9,7 @@
   <meta name="author" content="Corinna Brock">
 
   
-  <meta name="description" content="Yukihiro &#8220;Matz&#8221; Matsumoto I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be &hellip;">
+  <meta name="description" content="tl:dr - Testing is awesome. Do it a lot. Why do we test in Ruby? Ruby is a test-driven development language. Testing inherently shows you where your &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,93 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/16/testing-in-ruby-with-rspec/">Testing in Ruby With RSpec</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-16T08:58:00-04:00" pubdate data-updated="true">Oct 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>tl:dr - Testing is awesome. Do it a lot.</em></p>
+
+<p><img class="right" src="/images/RSpec/rubytesting.png" title="Red Green Refactor" alt="Red Green Refactor">
+Why do we test in Ruby? Ruby is a test-driven development language.  Testing inherently shows you where your application should go next. It allows you to specify the behavior that you think should happen before you write code to enact that behavior.  One of the most popular methods of testing in Ruby and Rails is <a href="http://rspec.info/">RSpec</a>.</p>
+
+<p>RSpec is a behavior-driven development tool for Ruby programmers. Behavior-driven development is an approach to software development that combines test-driven development, domain driven design, and acceptance test-driven planning. RSpec includes a command line program, text descriptions of examples and groups, customized reporting, expectation language, and built-in mocking/stubbing framework.</p>
+
+<p>As a beginner, I&#8217;m already thinking:</p>
+
+<h1>Ok. What?</h1>
+
+<p><img class="left" src="/images/RSpec/traffic.png" title="Red Green Refactor" alt="Red Green Refactor"></p>
+
+<h2>Red-Green-Refactor</h2>
+
+<p>If you&#8217;ve completed the <a href="http://cjbrock.github.com/blog/2012/10/10/5-easy-steps-to-getting-started-with-ruby-koans/">Ruby Koans</a>, you&#8217;ve already been exposed to testing syntax.  Testing in Ruby is done by a <a href="http://redgreenrefactor.eu/">Red-Green-Refactor</a> method. Basically, when you run your testing development tool, if the answer turns out red, your test fails. If it turns green, your test passes. And if it&#8217;s blue, you should check out your code for a way to refactor it and make it more efficient.</p>
+
+<h3><a href="http://en.wikipedia.org/wiki/You_ain't_gonna_need_it">YAGNI</a></h3>
+
+<p>When you&#8217;re writing an application, <a href="http://searchcio.techtarget.com/definition/feature-creep">feature creep</a> is bound to happen. If you can manage to stick to a test-driven method of development, you can keep feature creep to a minimum. It would be nice to immediately scale your website for a billion users, but YAGNI: You ain&#8217;t gonna need it.</p>
+
+<h2>Dos and Don&#8217;ts of Testing</h2>
+
+<p>Testing is actually very simple.  There are a few things to keep in mind, but overall if you trust your tests and allow them to guide your development you will not go wrong.</p>
+
+<h3>Dos:</h3>
+
+<ul>
+<li><em>Write your tests first</em><br/>
+The point of testing is to write the tests first, then write the code.  If you&#8217;re writing tests for code that you already think works, that&#8217;s not test driven development.</li>
+<li><em>Use contexts</em><br/>
+<a href="http://net.tutsplus.com/tutorials/ruby/ruby-for-newbies-testing-with-rspec/">Contexts</a> allow you to show the different behaviors of your application. They should simulate real-life situations.</li>
+<li><em>Use shared example groups</em><br/>
+<a href="http://blog.davidchelimsky.net/2010/11/07/specifying-mixins-with-shared-example-groups-in-rspec-2/">Shared example groups</a> allow you to define a method, and then call that method when testing.</li>
+<li><em>Test your edge cases</em><br/>
+It&#8217;s nice if your code works for the main bulk of your cases, but you must test your edge cases.</li>
+</ul>
+
+
+<h3>Don&#8217;ts:</h3>
+
+<ul>
+<li><em>Test the framework</em><br/>
+The framework works. Rails was tested as it was developed. There&#8217;s no point in wasting your time testing a framework that works.</li>
+<li><em>Test the implementation</em><br/>
+Again, the implementation works. Don&#8217;t waste your time.</li>
+<li><em>Get too clever</em><br/>
+Yes, you must use contexts and edge cases, but don&#8217;t drive yourself crazy trying to test every single possible outcome. We all know where the logical stopping point is - acknowledge and accept it.</li>
+</ul>
+
+
+<p><em>(Note: This blog post is a brief summarization of the testing techniques laid out by user Duien on <a href="https://speakerdeck.com/u/duien/p/testing-ruby">Speakerdeck</a>. Additional research and extrapolation is my own.)</em></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -261,6 +348,10 @@ If you don&#8217;t know if nil is an object, run it in IRB.
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/10/16/testing-in-ruby-with-rspec/">Testing in Ruby with RSpec</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/10/12/4-coders-every-ruby-newbie-should-know/">4 Coders Every Ruby Newbie Should Know</a>
