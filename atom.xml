@@ -4,7 +4,7 @@
   <title><![CDATA[Playing By Programming]]></title>
   <link href="http://cjbrock.github.com/atom.xml" rel="self"/>
   <link href="http://cjbrock.github.com/"/>
-  <updated>2012-10-17T12:49:23-04:00</updated>
+  <updated>2012-10-17T14:20:33-04:00</updated>
   <id>http://cjbrock.github.com/</id>
   <author>
     <name><![CDATA[Corinna Brock]]></name>
@@ -137,7 +137,7 @@ Yes, you must use contexts and edge cases, but don&#8217;t drive yourself crazy 
 
 <h2>1. Download, don&#8217;t web-base.</h2>
 
-<p>Although the web page does offer you the option to run through the Koans online, it&#8217;s an abridged version and only offers 30 modules. It also doesn&#8217;t save your state, so if you can&#8217;t complete all 30 in one sitting you have to restart.</p>
+<p>Although the web page does offer you the option to run through the Koans online, it&#8217;s an abridged version and only offers 30 modules. However, if you choose to web-base your koans, be sure to bookmark where you left off, so you can pick it back up again later.</p>
 
 <h2>2. Read the Installing Ruby section (no, really).</h2>
 
