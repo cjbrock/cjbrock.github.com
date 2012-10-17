@@ -8,7 +8,7 @@ categories:
 [Ruby Koans](http://rubykoans.com/) are a great learning tool published by Jim Weirich and Joe O'Brien.  They will expose you to both Ruby basics and testing conventions, but getting started can be a little intimidating. I've found these five tips to be really helpful. 
 
 ## 1. Download, don't web-base.
-Although the web page does offer you the option to run through the Koans online, it's an abridged version and only offers 30 modules. It also doesn't save your state, so if you can't complete all 30 in one sitting you have to restart. 
+Although the web page does offer you the option to run through the Koans online, it's an abridged version and only offers 30 modules. However, if you choose to web-base your koans, be sure to bookmark where you left off, so you can pick it back up again later.  
 
 ## 2. Read the Installing Ruby section (no, really).
 Even if you already have Ruby installed, walk through the Installing Ruby section of the webpage. it shows you how to get started with the Koans. To start the Koans, simply go to Terminal (or your choice of command line interface) and while in your Koans folder, type:
