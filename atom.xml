@@ -4,7 +4,7 @@
   <title><![CDATA[Playing By Programming]]></title>
   <link href="http://cjbrock.github.com/atom.xml" rel="self"/>
   <link href="http://cjbrock.github.com/"/>
-  <updated>2012-10-23T16:39:41-04:00</updated>
+  <updated>2012-10-23T16:41:09-04:00</updated>
   <id>http://cjbrock.github.com/</id>
   <author>
     <name><![CDATA[Corinna Brock]]></name>
@@ -18,12 +18,14 @@
     <link href="http://cjbrock.github.com/blog/2012/10/17/ruby-koans-and-nyc-on-rails/"/>
     <updated>2012-10-17T12:42:00-04:00</updated>
     <id>http://cjbrock.github.com/blog/2012/10/17/ruby-koans-and-nyc-on-rails</id>
-    <content type="html"><![CDATA[<p>Last night I gave my first <a href="http://vimeo.com/51753999">Ruby presentation</a> to <a href="http://www.meetup.com/nyc-on-rails/">NYC on Rails</a>.</p>
+    <content type="html"><![CDATA[<p>Last night I gave my first <a href="http://vimeo.com/51753999">Ruby presentation</a> to <a href="http://www.meetup.com/nyc-on-rails/">NYC on Rails</a>. I chose to present on the <a href="http://cjbrock.github.com/blog/2012/10/10/5-easy-steps-to-getting-started-with-ruby-koans/">Ruby Koans</a>: how to get started, and my favorite asserts.</p>
+
+<p>Check out the video here:</p>
 
 <div class="embed-video-container"><iframe src="http://player.vimeo.com/video/51753999 "></iframe></div>
 
 
-<p>I chose to present on the <a href="http://cjbrock.github.com/blog/2012/10/10/5-easy-steps-to-getting-started-with-ruby-koans/">Ruby Koans</a>: how to get started, and my favorite asserts.</p>
+<p>The slide deck is here:</p>
 
 <script async class="speakerdeck-embed" data-id="507dea38d1e0a4000200cc41" data-ratio="1.2945638432364097" src="http://cjbrock.github.com//speakerdeck.com/assets/embed.js"></script>
 
