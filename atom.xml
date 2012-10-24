@@ -4,7 +4,7 @@
   <title><![CDATA[Playing By Programming]]></title>
   <link href="http://cjbrock.github.com/atom.xml" rel="self"/>
   <link href="http://cjbrock.github.com/"/>
-  <updated>2012-10-23T19:31:46-04:00</updated>
+  <updated>2012-10-24T16:30:49-04:00</updated>
   <id>http://cjbrock.github.com/</id>
   <author>
     <name><![CDATA[Corinna Brock]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Fix a RedCloth Error While Installing Octopress]]></title>
+    <link href="http://cjbrock.github.com/blog/2012/10/24/how-to-fix-a-red-cloth-error-while-installing-octopress/"/>
+    <updated>2012-10-24T15:35:00-04:00</updated>
+    <id>http://cjbrock.github.com/blog/2012/10/24/how-to-fix-a-red-cloth-error-while-installing-octopress</id>
+    <content type="html"><![CDATA[<p><a href="http://octopress.org/">Octopress</a> is a great blogging platform for coders. <em>(Full disclosure: This blog is run on Octopress.)</em> However, when installing, sometimes strange errors come up.  A few weeks ago while setting up our blogs, my classmate <a href="http://innatewonderer.github.com/">Jenya</a> ran into a strange RedCloth error while running bundle install following the <a href="http://octopress.org/docs/setup/">otherwise very comprehensive setup instructions</a> provided by Octopress.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">An</span> <span class="n">error</span> <span class="n">occured</span> <span class="k">while</span> <span class="n">installing</span> <span class="no">RedCloth</span> <span class="p">(</span><span class="mi">4</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">9</span><span class="p">),</span> <span class="ow">and</span> <span class="no">Bundler</span> <span class="n">cannot</span> <span class="n">continue</span><span class="o">.</span>
+</span><span class='line'><span class="no">Make</span> <span class="n">sure</span> <span class="n">that</span> <span class="sb">`gem install RedCloth -v &#39;4.2.9&#39;`</span> <span class="n">succeeds</span> <span class="n">before</span> <span class="n">bundling</span><span class="o">.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This was a little intriguing, but not hard to fix.  However, after trying to run gem install RedCloth, we got another error.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">ERROR</span><span class="p">:</span>  <span class="no">Error</span> <span class="n">installing</span> <span class="no">RedCloth</span><span class="p">:</span>
+</span><span class='line'><span class="no">ERROR</span><span class="p">:</span> <span class="no">Failed</span> <span class="n">to</span> <span class="n">build</span> <span class="n">gem</span> <span class="n">native</span> <span class="n">extension</span><span class="o">.</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="sr">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="n">ruby1</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="mi">3</span> <span class="n">extconf</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>    <span class="sr">/usr/</span><span class="n">lib</span><span class="o">/</span><span class="n">ruby</span><span class="o">/</span><span class="mi">1</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="mi">3</span><span class="o">/</span><span class="n">rubygems</span><span class="o">/</span><span class="n">custom_require</span><span class="o">.</span><span class="n">rb</span><span class="p">:</span><span class="mi">36</span><span class="ss">:in</span> <span class="sb">`require&#39;: cannot load such file -- mkmf (LoadError)</span>
+</span><span class='line'><span class="sb">from /usr/lib/ruby/1.9.3/rubygems/custom_require.rb:36:in `</span><span class="nb">require</span><span class="s1">&#39;</span>
+</span><span class='line'><span class="s1">from extconf.rb:1:in `&lt;main&gt;&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Since gem install had never failed for me when I ran it, I decided to do a little more research.  What actually is RedCloth? Why do we need it?</p>
+
+<p><a href="http://redcloth.org/">RedCloth</a> is a module for using the Textile markup language in Ruby. Even the official website said the gem install should work. The issue was not actually RedCloth, but it turns out after checking the mkmf.log it was an issue with gcc-4.2 also not being found.</p>
+
+<p><a href="http://gcc.gnu.org/">gcc</a> is the Gnu Compiler Collection.  It includes support for multiple programming languages, as well as libraries for these languages. Even after making sure that command line tools were installed with <a href="https://developer.apple.com/xcode/">Xcode</a>, it still didn&#8217;t find the gcc compiler. It appears that the newest version of Xcode has removed gcc in favor of <a href="http://clang.llvm.org/index.html">clang</a>.</p>
+
+<p>Luckily, she actually had gcc on her machine, but it wasn&#8217;t installed. We only needed to run the last two lines of code. If you don&#8217;t, run all five lines.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">brew</span> <span class="n">update</span>
+</span><span class='line'><span class="err">$</span> <span class="n">brew</span> <span class="n">tap</span> <span class="n">homebrew</span><span class="o">/</span><span class="n">homebrew</span><span class="o">-</span><span class="n">dupes</span>
+</span><span class='line'><span class="err">$</span> <span class="n">brew</span> <span class="n">install</span> <span class="n">apple</span><span class="o">-</span><span class="n">gcc42</span>
+</span><span class='line'><span class="err">$</span> <span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="sr">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="n">gcc</span> <span class="sr">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="n">gcc</span><span class="o">-</span><span class="mi">4</span><span class="o">.</span><span class="mi">2</span>
+</span><span class='line'><span class="err">$</span> <span class="n">bundle</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Sources:</h4>
+
+<p>https://github.com/imathis/octopress/issues/59 <br/>
+http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/ <br/>
+http://stackoverflow.com/questions/12119138/failed-to-build-gem-native-extension-when-install-redcloth-4-2-9-install-linux  <br/>
+http://jgarber.lighthouseapp.com/projects/13054/tickets/215-native-ext-compilation-failure</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[5 Easy Guides to Help You Get Started With GitHub]]></title>
