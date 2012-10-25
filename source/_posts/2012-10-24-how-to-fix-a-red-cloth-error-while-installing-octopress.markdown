@@ -44,7 +44,8 @@ $ bundle install
 ####Sources:
 https://github.com/imathis/octopress/issues/59   
 http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/   
-http://stackoverflow.com/questions/12119138/failed-to-build-gem-native-extension-when-install-redcloth-4-2-9-install-linux
+http://stackoverflow.com/questions/12119138/failed-to-build-gem-native-extension-when-install-redcloth-4-2-9-install-linux    
+http://jgarber.lighthouseapp.com/projects/13054/tickets/215-native-ext-compilation-failure
 
 
 
