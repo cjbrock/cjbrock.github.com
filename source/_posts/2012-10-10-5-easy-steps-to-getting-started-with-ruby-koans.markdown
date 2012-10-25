@@ -15,7 +15,7 @@ Even if you already have Ruby installed, walk through the Installing Ruby sectio
 {% img center /images/koans/path_to_enlightenment.png 'Path to Enlightenment' 'Path to Enlightenment' %}
 The error message will point you directly to the file and line number. This will bring up your first test. You don't really need to know about testing to be able to get through the Koans, you just need to understand that whenever you see a line like this: ___ you need to delete it and fill it in with something else. 
 
-
+<!--more-->
 
 ## 3. Guess.
 If you know about the Koans, chances are that you have a basic Ruby knowledge base. Our first assert tells us exactly what to do, which makes guessing is pretty easy.

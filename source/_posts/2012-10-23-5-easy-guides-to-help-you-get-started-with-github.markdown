@@ -14,6 +14,8 @@ Enter [Git](http://git-scm.com/) and [GitHub](https://github.com/).  Git is a ve
 The amazing people at [Code School](http://www.codeschool.com/) and GitHub have collaborated to make the great GitHub simulator [Try GitHub](http://try.github.com/) to get you familiar with the Git syntax. It runs you through basic commands like git init, git status, git add, git commit, and git push. After you've run through this, the syntax doesn't feel so foreign anymore.
 
 
+<!--more-->
+
 ##2. [GitHub Help](https://help.github.com/)
 {% img left /images/Github/2-help-github-com.png 250 250 'Help from Github' 'Help from Github' %}
 If you've run through Try GitHub and you still have questions, try the [GitHub Help](https://help.github.com/) page. Chances are that if you have a question, many people before you have had the same one.  The search function on the Help page is incredibly robust, and the answers help to walk you through the steps needed to perform whatever it is that is confusing to you. They also have helpful categories of articles, such as [Bootcamp](https://help.github.com/categories/54/articles), [Setup](https://help.github.com/categories/53/articles), [Using Git](https://help.github.com/categories/19/articles), and [Repositories](https://help.github.com/categories/24/articles) among others.

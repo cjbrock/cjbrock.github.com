@@ -26,6 +26,8 @@ from extconf.rb:1:in `<main>'
 
 Since gem install had never failed for me when I ran it, I decided to do a little more research.  What actually is RedCloth? Why do we need it?
 
+<!--more-->
+
 [RedCloth](http://redcloth.org/) is a module for using the Textile markup language in Ruby. Even the official website said the gem install should work. The issue was not actually RedCloth, but it turns out after checking the mkmf.log it was an issue with gcc-4.2 also not being found.
 
 [gcc](http://gcc.gnu.org/) is the Gnu Compiler Collection.  It includes support for multiple programming languages, as well as libraries for these languages. Even after making sure that command line tools were installed with [Xcode](https://developer.apple.com/xcode/), it still didn't find the gcc compiler. It appears that the newest version of Xcode has removed gcc in favor of [clang](http://clang.llvm.org/index.html). 

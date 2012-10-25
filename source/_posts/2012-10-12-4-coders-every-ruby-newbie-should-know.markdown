@@ -14,6 +14,8 @@ I hope to see Ruby help every programmer in the world to be productive, and to e
 
 The Ruby community lives by the mantra: "Matz is nice, so we are nice".
 
+<!--more-->
+
 ## _why the lucky stiff
 {% img right /images/coders/why.jpg '_Why' '_why the lucky stiff' %}
 {% blockquote %}
