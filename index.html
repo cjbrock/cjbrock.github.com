@@ -136,33 +136,12 @@
 
 <p>Since gem install had never failed for me when I ran it, I decided to do a little more research.  What actually is RedCloth? Why do we need it?</p>
 
-<p><a href="http://redcloth.org/">RedCloth</a> is a module for using the Textile markup language in Ruby. Even the official website said the gem install should work. The issue was not actually RedCloth, but it turns out after checking the mkmf.log it was an issue with gcc-4.2 also not being found.</p>
-
-<p><a href="http://gcc.gnu.org/">gcc</a> is the Gnu Compiler Collection.  It includes support for multiple programming languages, as well as libraries for these languages. Even after making sure that command line tools were installed with <a href="https://developer.apple.com/xcode/">Xcode</a>, it still didn&#8217;t find the gcc compiler. It appears that the newest version of Xcode has removed gcc in favor of <a href="http://clang.llvm.org/index.html">clang</a>.</p>
-
-<p>Luckily, she actually had gcc on her machine, but it wasn&#8217;t installed. We only needed to run the last two lines of code. If you don&#8217;t, run all five lines.</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">brew</span> <span class="n">update</span>
-</span><span class='line'><span class="err">$</span> <span class="n">brew</span> <span class="n">tap</span> <span class="n">homebrew</span><span class="o">/</span><span class="n">homebrew</span><span class="o">-</span><span class="n">dupes</span>
-</span><span class='line'><span class="err">$</span> <span class="n">brew</span> <span class="n">install</span> <span class="n">apple</span><span class="o">-</span><span class="n">gcc42</span>
-</span><span class='line'><span class="err">$</span> <span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="sr">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="n">gcc</span> <span class="sr">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="n">gcc</span><span class="o">-</span><span class="mi">4</span><span class="o">.</span><span class="mi">2</span>
-</span><span class='line'><span class="err">$</span> <span class="n">bundle</span> <span class="n">install</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Sources:</h4>
-
-<p>https://github.com/imathis/octopress/issues/59 <br/>
-http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/ <br/>
-http://stackoverflow.com/questions/12119138/failed-to-build-gem-native-extension-when-install-redcloth-4-2-9-install-linux  <br/>
-http://jgarber.lighthouseapp.com/projects/13054/tickets/215-native-ext-compilation-failure</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/10/24/how-to-fix-a-red-cloth-error-while-installing-octopress/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -205,27 +184,12 @@ http://jgarber.lighthouseapp.com/projects/13054/tickets/215-native-ext-compilati
 <p><img class="left" src="/images/Github/1-trygit.png" width="250" height="250" title="Try Git" alt="Try Git">
 The amazing people at <a href="http://www.codeschool.com/">Code School</a> and GitHub have collaborated to make the great GitHub simulator <a href="http://try.github.com/">Try GitHub</a> to get you familiar with the Git syntax. It runs you through basic commands like git init, git status, git add, git commit, and git push. After you&#8217;ve run through this, the syntax doesn&#8217;t feel so foreign anymore.</p>
 
-<h2>2. <a href="https://help.github.com/">GitHub Help</a></h2>
-
-<p><img class="left" src="/images/Github/2-help-github-com.png" width="250" height="250" title="Help from Github" alt="Help from Github">
-If you&#8217;ve run through Try GitHub and you still have questions, try the <a href="https://help.github.com/">GitHub Help</a> page. Chances are that if you have a question, many people before you have had the same one.  The search function on the Help page is incredibly robust, and the answers help to walk you through the steps needed to perform whatever it is that is confusing to you. They also have helpful categories of articles, such as <a href="https://help.github.com/categories/54/articles">Bootcamp</a>, <a href="https://help.github.com/categories/53/articles">Setup</a>, <a href="https://help.github.com/categories/19/articles">Using Git</a>, and <a href="https://help.github.com/categories/24/articles">Repositories</a> among others.</p>
-
-<h2>3. <a href="http://rogerdudler.github.com/git-guide/">Git - The Simple Guide</a></h2>
-
-<p><img class="left" src="/images/Github/3-git-simple-guide.png" width="250" height="250" title="Git - The Simple Guide" alt="Git - The Simple Guide">
-If you&#8217;re still struggling a little bit, try <a href="http://rogerdudler.github.com/git-guide/">Git - The Simple Guide</a>. Available in 12 different languages as well as English, The Simple Guide walks hand in hand with you through all the steps to set up a GitHub repository with helpful links to downloading git in multiple operating systems. Illustrated with colorful graphics and playful fonts, this really is the simplest guide to getting started with GitHub, but it gives you a good brief overview of the functionality that Git offers.</p>
-
-<h2>4. <a href="http://railscasts.com/episodes/96-git-on-rails">Git on Rails</a></h2>
-
-<p><img class="left" src="/images/Github/4-railscasts.png" width="250" height="250" title="Git on Rails" alt="Git on Rails">
-For those of you who prefer a more visual guide, <a href="http://railscasts.com/">Railscasts</a> offers a five minute screencast about getting started with Git. Railscasts are ubiquitous in the world of coding with over 350 episodes casted on almost every conceivable topic.  This short and sweet guide to getting started with Git is Rails specific, but the concepts apply through all languages.</p>
-
-<h2>5. <a href="http://ndpsoftware.com/git-cheatsheet.html#loc=local_repo">GitHub Cheatsheet</a></h2>
-
-<p><img class="left" src="/images/Github/5-gitcheatsheet.png" width="250" height="250" title="Git Cheatsheet" alt="Git Cheatsheet">
-The <a href="http://ndpsoftware.com/git-cheatsheet.html#loc=local_repo">GitHub Cheatsheet</a> is a beautifully designed interactive site that allows you to click on the specific area, and it gives you a mouse-over list of the commands available as well as a short synopsis of the function. It also uses good graphic design to illustrate which commands cover multiple areas.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/10/23/5-easy-guides-to-help-you-get-started-with-github/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -316,49 +280,12 @@ Why do we test in Ruby? Ruby is a test-driven development language.  Testing inh
 
 <h1>Ok. What?</h1>
 
-<p><img class="left" src="/images/RSpec/traffic.png" title="Red Green Refactor" alt="Red Green Refactor"></p>
-
-<h2>Red-Green-Refactor</h2>
-
-<p>If you&#8217;ve completed the <a href="http://cjbrock.github.com/blog/2012/10/10/5-easy-steps-to-getting-started-with-ruby-koans/">Ruby Koans</a>, you&#8217;ve already been exposed to testing syntax.  Testing in Ruby is done by a <a href="http://redgreenrefactor.eu/">Red-Green-Refactor</a> method. Basically, when you run your testing development tool, if the answer turns out red, your test fails. If it turns green, your test passes. And if it&#8217;s blue, you should check out your code for a way to refactor it and make it more efficient.</p>
-
-<h3><a href="http://en.wikipedia.org/wiki/You_ain't_gonna_need_it">YAGNI</a></h3>
-
-<p>When you&#8217;re writing an application, <a href="http://searchcio.techtarget.com/definition/feature-creep">feature creep</a> is bound to happen. If you can manage to stick to a test-driven method of development, you can keep feature creep to a minimum. It would be nice to immediately scale your website for a billion users, but YAGNI: You ain&#8217;t gonna need it.</p>
-
-<h2>Dos and Don&#8217;ts of Testing</h2>
-
-<p>Testing is actually very simple.  There are a few things to keep in mind, but overall if you trust your tests and allow them to guide your development you will not go wrong.</p>
-
-<h3>Dos:</h3>
-
-<ul>
-<li><em>Write your tests first</em><br/>
-The point of testing is to write the tests first, then write the code.  If you&#8217;re writing tests for code that you already think works, that&#8217;s not test driven development.</li>
-<li><em>Use contexts</em><br/>
-<a href="http://net.tutsplus.com/tutorials/ruby/ruby-for-newbies-testing-with-rspec/">Contexts</a> allow you to show the different behaviors of your application. They should simulate real-life situations.</li>
-<li><em>Use shared example groups</em><br/>
-<a href="http://blog.davidchelimsky.net/2010/11/07/specifying-mixins-with-shared-example-groups-in-rspec-2/">Shared example groups</a> allow you to define a method, and then call that method when testing.</li>
-<li><em>Test your edge cases</em><br/>
-It&#8217;s nice if your code works for the main bulk of your cases, but you must test your edge cases.</li>
-</ul>
-
-
-<h3>Don&#8217;ts:</h3>
-
-<ul>
-<li><em>Test the framework</em><br/>
-The framework works. Rails was tested as it was developed. There&#8217;s no point in wasting your time testing a framework that works.</li>
-<li><em>Test the implementation</em><br/>
-Again, the implementation works. Don&#8217;t waste your time.</li>
-<li><em>Get too clever</em><br/>
-Yes, you must use contexts and edge cases, but don&#8217;t drive yourself crazy trying to test every single possible outcome. We all know where the logical stopping point is - acknowledge and accept it.</li>
-</ul>
-
-
-<p><em>(Note: This blog post is a brief summarization of the testing techniques laid out by user Duien on <a href="https://speakerdeck.com/u/duien/p/testing-ruby">Speakerdeck</a>. Additional research and extrapolation is my own.)</em></p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/10/16/testing-in-ruby-with-rspec/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -403,34 +330,12 @@ Yes, you must use contexts and edge cases, but don&#8217;t drive yourself crazy 
 
 <p>The Ruby community lives by the mantra: &#8220;Matz is nice, so we are nice&#8221;.</p>
 
-<h2>_why the lucky stiff</h2>
-
-<p><img class="right" src="/images/coders/why.jpg" title="_Why" alt="_why the lucky stiff"></p>
-
-<blockquote><p>When you don&#8217;t create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.</p></blockquote>
-
-
-<p>Although he committed <a href="http://www.urbandictionary.com/define.php?term=infocide">infocide</a> on August 19, 2009, _why is still one of the most influential Ruby programmers to date.  He is best known for <a href="http://mislav.uniqpath.com/poignant-guide/book/chapter-1.html">Why&#8217;s Poignant Guide to Ruby</a>, <a href="http://hackety.com/">Hackety Hack</a>, and the <a href="http://tryruby.org/">Try Ruby</a> interactive programming tutorial. He has also contributed several libraries and applications to the coder community. His love of programming and language speak to even new programmers, as illustrated by Annie Lowrey&#8217;s March 2012 Slate Magazine article <a href="http://www.slate.com/articles/technology/technology/2012/03/ruby_ruby_on_rails_and__why_the_disappearance_of_one_of_the_world_s_most_beloved_computer_programmers_.html">&#8220;Where&#8217;s _why?&#8221;</a>.</p>
-
-<h2>David Heinemeier Hansson</h2>
-
-<p><img class="right" src="/images/coders/hansson.jpg" title="Hansson" alt="David Heinemeier Hansson"></p>
-
-<blockquote><p>Flexibility is not free. It’s overrated. And if you trade that flexibility in for some constraints, you get a lot of complexity removed from the equation, you get a lot of productivity back from all the stuff you don’t have to do.</p></blockquote>
-
-
-<p><a href="https://twitter.com/dhh">Hansson</a> is a Danish programmer who created <a href="http://rubyonrails.org/">Ruby on Rails</a>, a web framework that is optimized for programmer productivity.  It abstracts away a lot of code processes, leading some to criticize the <a href="http://www.michaelharrison.ws/weblog/?p=159">&#8220;magic&#8221; of rails</a>. However, Rails allows programmers a high level of productivity faster with a less painful learning curve than other languages. Hansson is also a <a href="http://david.heinemeierhansson.com/racing">professional race car driver</a>.</p>
-
-<h2>Avi Flombaum</h2>
-
-<p><img class="right" src="/images/coders/avi.jpeg" title="Avi" alt="Avi Flombaum"></p>
-
-<blockquote><p>There’s a joy to programming. That’s the reason why we’re here…to experience the act of falling in love with programming.</p></blockquote>
-
-
-<p><a href="https://de.twitter.com/aviflombaum">Avi</a> is our fearless leader at the <a href="http://flatironschool.com">Flatiron School</a> in New York City. A programmer since the internet was born, Avi brings a love of code and a passion for teaching to the school. <a href="http://shitavisays.tumblr.com">Imminently quotable</a>, Avi also organizes one of the largest Rails meetups in the world, <a href="http://www.meetup.com/nyc-on-rails">NYC on Rails</a>.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/10/12/4-coders-every-ruby-newbie-should-know/">Read on &rarr;</a>
+    </footer>
   
 
 

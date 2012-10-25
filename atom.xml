@@ -4,7 +4,7 @@
   <title><![CDATA[Playing By Programming]]></title>
   <link href="http://cjbrock.github.com/atom.xml" rel="self"/>
   <link href="http://cjbrock.github.com/"/>
-  <updated>2012-10-25T14:07:55-04:00</updated>
+  <updated>2012-10-25T14:13:58-04:00</updated>
   <id>http://cjbrock.github.com/</id>
   <author>
     <name><![CDATA[Corinna Brock]]></name>
@@ -48,6 +48,9 @@
 
 <p>Since gem install had never failed for me when I ran it, I decided to do a little more research.  What actually is RedCloth? Why do we need it?</p>
 
+<!--more-->
+
+
 <p><a href="http://redcloth.org/">RedCloth</a> is a module for using the Textile markup language in Ruby. Even the official website said the gem install should work. The issue was not actually RedCloth, but it turns out after checking the mkmf.log it was an issue with gcc-4.2 also not being found.</p>
 
 <p><a href="http://gcc.gnu.org/">gcc</a> is the Gnu Compiler Collection.  It includes support for multiple programming languages, as well as libraries for these languages. Even after making sure that command line tools were installed with <a href="https://developer.apple.com/xcode/">Xcode</a>, it still didn&#8217;t find the gcc compiler. It appears that the newest version of Xcode has removed gcc in favor of <a href="http://clang.llvm.org/index.html">clang</a>.</p>
@@ -89,6 +92,9 @@ http://jgarber.lighthouseapp.com/projects/13054/tickets/215-native-ext-compilati
 
 <p><img class="left" src="http://cjbrock.github.com/images/Github/1-trygit.png" width="250" height="250" title="Try Git" alt="Try Git">
 The amazing people at <a href="http://www.codeschool.com/">Code School</a> and GitHub have collaborated to make the great GitHub simulator <a href="http://try.github.com/">Try GitHub</a> to get you familiar with the Git syntax. It runs you through basic commands like git init, git status, git add, git commit, and git push. After you&#8217;ve run through this, the syntax doesn&#8217;t feel so foreign anymore.</p>
+
+<!--more-->
+
 
 <h2>2. <a href="https://help.github.com/">GitHub Help</a></h2>
 
@@ -146,6 +152,9 @@ Why do we test in Ruby? Ruby is a test-driven development language.  Testing inh
 <p>As a beginner, I&#8217;m already thinking:</p>
 
 <h1>Ok. What?</h1>
+
+<!--more-->
+
 
 <p><img class="left" src="http://cjbrock.github.com/images/RSpec/traffic.png" title="Red Green Refactor" alt="Red Green Refactor"></p>
 
@@ -207,6 +216,9 @@ Yes, you must use contexts and edge cases, but don&#8217;t drive yourself crazy 
 
 <p>The Ruby community lives by the mantra: &#8220;Matz is nice, so we are nice&#8221;.</p>
 
+<!--more-->
+
+
 <h2>_why the lucky stiff</h2>
 
 <p><img class="right" src="http://cjbrock.github.com/images/coders/why.jpg" title="_Why" alt="_why the lucky stiff"></p>
@@ -252,6 +264,9 @@ Yes, you must use contexts and edge cases, but don&#8217;t drive yourself crazy 
 <p>Even if you already have Ruby installed, walk through the Installing Ruby section of the webpage. it shows you how to get started with the Koans. To start the Koans, simply go to Terminal (or your choice of command line interface) and while in your Koans folder, type:
 <img class="center" src="http://cjbrock.github.com/images/koans/path_to_enlightenment.png" title="Path to Enlightenment" alt="Path to Enlightenment">
 The error message will point you directly to the file and line number. This will bring up your first test. You don&#8217;t really need to know about testing to be able to get through the Koans, you just need to understand that whenever you see a line like this: ___ you need to delete it and fill it in with something else.</p>
+
+<!--more-->
+
 
 <h2>3. Guess.</h2>
 
