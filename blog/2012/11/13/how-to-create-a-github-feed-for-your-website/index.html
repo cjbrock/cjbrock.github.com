@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Playing By Programming</title>
+  <title>How To Create a Github Feed for Your Website - Playing By Programming</title>
   <meta name="author" content="Corinna Brock">
 
   
-  <meta name="description" content="Blog Archive 2012 How To Create a Github Feed for Your Website
-Nov 13 2012 How to Fix a RedCloth Error While Installing Octopress
-Oct 24 2012 5 Easy &hellip;">
+  <meta name="description" content="When we were designing our student pages at the Flatiron School, one of our major questions was what to include. As programmers, one of the best &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Oct 24 2012 5 Easy &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cjbrock.github.com/blog/archives/">
+  <link rel="canonical" href="http://cjbrock.github.com/blog/2012/11/13/how-to-create-a-github-feed-for-your-website/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -88,102 +86,112 @@ Oct 24 2012 5 Easy &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">How to Create a Github Feed for Your Website</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-13T14:48:00-05:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p><img class="right" src="/images/GithubFeed/octocat-class-act.jpg" title="Octocat Rocks" alt="Octocat Rocks"></p>
 
-  
-  <h2>2012</h2>
+<p>When we were designing our <a href="http://students.flatiron.com/corinnabrock">student pages</a> at the <a href="http://flatironschool.com">Flatiron School</a>, one of our major questions was what to include. As programmers, one of the best ways that we can get noticed is to have our open-source projects available in as many places as we can find them.  <a href="http://www.github.com">Github</a> allows you to show your code to the world. The Octopress sidebar has built-in functionality of a list of your current Github repos, but wouldn&#8217;t it be cooler to have public activity feed that shows which of your repos have the most current commits?</p>
 
-<article>
-  
-<h1><a href="/blog/2012/11/13/how-to-create-a-github-feed-for-your-website/">How To Create a Github Feed for Your Website</a></h1>
-<time datetime="2012-11-13T14:48:00-05:00" pubdate><span class='month'>Nov</span> <span class='day'>13</span> <span class='year'>2012</span></time>
+<h2>1. Find your Github RSS key.</h2>
 
+<p>Github provides an RSS key to all of your public activity.  This format of your key will be:</p>
 
-</article>
+<h5>https://github.com/USERNAME.atom</h5>
 
+<p>Replace USERNAME with your username.  For example, my public github key would be https://github.com/cjbrock.atom. If you subscribe to your own RSS feed, the key generated will be your private RSS feed. It looks something like this: https://github.com/username.private.actor.atom?token=somehextoken. Unless you would like to expose your private key to the rest of the world, please do not use this key.</p>
 
-
-<article>
-  
-<h1><a href="/blog/2012/10/24/how-to-fix-a-red-cloth-error-while-installing-octopress/">How to Fix a RedCloth Error While Installing Octopress</a></h1>
-<time datetime="2012-10-24T15:35:00-04:00" pubdate><span class='month'>Oct</span> <span class='day'>24</span> <span class='year'>2012</span></time>
+<!--more-->
 
 
-</article>
+<h2>2. Use a javascript/php generator to create your code.</h2>
 
+<p><img class="right" src="/images/GithubFeed/Feed2JS.png" title="Feed 2 JS" alt="Feed 2 JS">
+There are many javascript PHP generators that allow you to copy and paste javascript right into your site, and will abstract away the complexity of writing your own RSS generator. <a href="http://feed2js.org/">FeedtoJS</a> is the original cut and paste PHP generator.  Luckily, it&#8217;s open source, and you can run your own instance of Feed2PHP if you&#8217;d like to.  But for this, just insert your RSS key, and select your options that you would like.  You can specify the number of items to display and showing and hiding item descriptions, as well as many other options.  Feed2JS will generate code for you to copy and paste into your site.</p>
 
+<p>A simpler version of Feed2JS is located <a href="http://itde.vccs.edu/rss2js/build.php">here</a>, but it is not guaranteed to stay live.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/10/23/5-easy-guides-to-help-you-get-started-with-github/">5 Easy Guides to Help You Get Started With GitHub</a></h1>
-<time datetime="2012-10-23T16:52:00-04:00" pubdate><span class='month'>Oct</span> <span class='day'>23</span> <span class='year'>2012</span></time>
+<h2>3. Put the code in your application.</h2>
 
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/10/17/ruby-koans-and-nyc-on-rails/">Ruby Koans and NYC on Rails</a></h1>
-<time datetime="2012-10-17T12:42:00-04:00" pubdate><span class='month'>Oct</span> <span class='day'>17</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/10/16/testing-in-ruby-with-rspec/">Testing in Ruby with RSpec</a></h1>
-<time datetime="2012-10-16T08:58:00-04:00" pubdate><span class='month'>Oct</span> <span class='day'>16</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/10/12/4-coders-every-ruby-newbie-should-know/">4 Coders Every Ruby Newbie Should Know</a></h1>
-<time datetime="2012-10-12T14:00:00-04:00" pubdate><span class='month'>Oct</span> <span class='day'>12</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/10/10/5-easy-steps-to-getting-started-with-ruby-koans/">5 Easy Steps to Getting Started with Ruby Koans</a></h1>
-<time datetime="2012-10-10T15:02:00-04:00" pubdate><span class='month'>Oct</span> <span class='day'>10</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/10/03/hello-world/">Hello World</a></h1>
-<time datetime="2012-10-03T15:29:00-04:00" pubdate><span class='month'>Oct</span> <span class='day'>03</span> <span class='year'>2012</span></time>
-
-
-</article>
-
+<p>Feeds are best located in a column layout.  The <a href="http://students.flatiron.com/corinnabrock">Students at Flatiron</a> page uses a dual column layout with a <a href="https://twitter.com/cjnboston">Twitter</a> feed, but you can use CSS or SCSS to format your output however you&#8217;d like.<br/>
+<img class="right" src="/images/GithubFeed/feed-view.png" title="Feed 2 JS" alt="Feed 2 JS"></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Corinna Brock</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-13T14:48:00-05:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cjbrock.github.com/blog/2012/11/13/how-to-create-a-github-feed-for-your-website/" data-via="cjnboston" data-counturl="http://cjbrock.github.com/blog/2012/11/13/how-to-create-a-github-feed-for-your-website/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/24/how-to-fix-a-red-cloth-error-while-installing-octopress/" title="Previous Post: How to Fix a RedCloth Error While Installing Octopress">&laquo; How to Fix a RedCloth Error While Installing Octopress</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -284,7 +292,10 @@ Oct 24 2012 5 Easy &hellip;">
       var disqus_shortname = 'playingbyprogramming';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://cjbrock.github.com/blog/2012/11/13/how-to-create-a-github-feed-for-your-website/';
+        var disqus_url = 'http://cjbrock.github.com/blog/2012/11/13/how-to-create-a-github-feed-for-your-website/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
