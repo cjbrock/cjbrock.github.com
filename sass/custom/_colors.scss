@@ -3,15 +3,15 @@
 $main-color:  #172136;
 
 //This controls the background. 
-$page-bg: #6bacb8;
+$page-bg: darken(#6bacb8, 20);
 
 //This controls the header. 
-$header-bg: darken($page-bg, 20);
+$header-bg: darken(#6bacb8, 20);
 $title-color: lighten($header-bg,100);
 $subtitle-color: #c4bdbc;
 
 //This controls the navigation bar
-$nav-bg: $page-bg;
+$nav-bg: #6bacb8;
 $nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
 $nav-link-color: darken($main-color, 20);
 $nav-link-color-hover: lighten($main-color, 20);
