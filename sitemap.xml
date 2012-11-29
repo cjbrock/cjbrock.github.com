@@ -43,12 +43,18 @@
         <lastmod>2012-11-13T19:44:42-05:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://cjbrock.github.com/blog/2012/11/28/how-to-solve-a-403-nginx-file-download-permission-error/
+        </loc>
+        <lastmod>2012-11-28T19:21:35-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://cjbrock.github.com/about-me/</loc>
         <lastmod>2012-11-08T16:03:05-05:00</lastmod>
     </url>
     <url>
         <loc>http://cjbrock.github.com/blog/archives/</loc>
-        <lastmod>2012-11-13T19:44:42-05:00</lastmod>
+        <lastmod>2012-11-28T19:21:35-05:00</lastmod>
     </url>
     <url>
         <loc>http://cjbrock.github.com/contact-me/</loc>
@@ -56,6 +62,6 @@
     </url>
     <url>
         <loc>http://cjbrock.github.com/</loc>
-        <lastmod>2012-11-13T19:44:42-05:00</lastmod>
+        <lastmod>2012-11-28T19:21:35-05:00</lastmod>
     </url>
 </urlset>

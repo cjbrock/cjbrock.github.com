@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Playing By Programming</title>
+  <title>How to Solve a 403 Nginx File Download Permission Error - Playing By Programming</title>
   <meta name="author" content="Corinna Brock">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cjbrock.github.com/">
+  <link rel="canonical" href="http://cjbrock.github.com/blog/2012/11/28/how-to-solve-a-403-nginx-file-download-permission-error/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -85,15 +85,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/11/28/how-to-solve-a-403-nginx-file-download-permission-error/">How to Solve a 403 Nginx File Download Permission Error</a></h1>
+      <h1 class="entry-title">How to Solve a 403 Nginx File Download Permission Error</h1>
     
     
       <p class="meta">
@@ -116,7 +113,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Once the basic functionality of our <a href="http://assignment.io">assignment.io</a> website was implemented, one of the features that we wanted to implement was file upload and download.  The basic upload functionality was surprisingly easy to implement using a gem called <a href="https://github.com/jnicklas/carrierwave">CarrierWave</a>.  The Github page has a pretty thorough walk-through, but if you’re looking to display the content on your website there is a <a href="http://railscasts.com/episodes/253-carrierwave-file-uploads">Railscast</a> on the file upload process.  Both will walk you through the steps of setting it up, and it took us about 20 minutes.</p>
+<div class="entry-content"><p>Once the basic functionality of our <a href="http://assignment.io">assignment.io</a> website was implemented, one of the features that we wanted to implement was file upload and download.  The basic upload functionality was surprisingly easy to implement using a gem called <a href="https://github.com/jnicklas/carrierwave">CarrierWave</a>.  The Github page has a pretty thorough walk-through, but if you’re looking to display the content on your website there is a <a href="http://railscasts.com/episodes/253-carrierwave-file-uploads">Railscast</a> on the file upload process.  Both will walk you through the steps of setting it up, and it took us about 20 minutes.</p>
 
 <p>File download was a bit more complex.  While an individual user would only upload one file to be associated with an assignment, the person who assigned the assignment would probably want a way to download all of the submitted work at once.  For this, we implemented a gem called <a href="https://github.com/aussiegeek/rubyzip">RubyZip</a>. If you’re writing a rails app, you don’t need to require ‘rubygems’, but you DO need to require ‘zip/zip’ in your application.rb file.</p>
 
@@ -213,73 +210,16 @@ The built-in site functionality works as well.</p>
 
 <p><em><a href="http://www.dartmouth.edu/~rc/help/faq/permissions.html">This is a great explanation of file permissions in Unix.</a> For purposes of simplicity, I&#8217;ve abstracted away the routing and controller functionality that calls the above method.</em></p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/13/how-to-create-a-github-feed-for-your-website/">How to Create a Github Feed for Your Website</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Corinna Brock</span></span>
 
-<time datetime="2012-11-13T14:48:00-05:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="right" src="/images/GithubFeed/octocat-class-act.jpg" title="Octocat Rocks" alt="Octocat Rocks"></p>
-
-<p>When we were designing our <a href="http://students.flatiron.com/corinnabrock">student pages</a> at the <a href="http://flatironschool.com">Flatiron School</a>, one of our major questions was what to include. As programmers, one of the best ways that we can get noticed is to have our open-source projects available in as many places as we can find them.  <a href="http://www.github.com">Github</a> allows you to show your code to the world. The Octopress sidebar has built-in functionality of a list of your current Github repos, but wouldn&#8217;t it be cooler to have public activity feed that shows which of your repos have the most current commits?</p>
-
-<h2>1. Find your Github RSS key.</h2>
-
-<p>Github provides an RSS key to all of your public activity.  This format of your key will be:</p>
-
-<h5>https://github.com/USERNAME.atom</h5>
-
-<p>Replace USERNAME with your username.  For example, my public github key would be https://github.com/cjbrock.atom. If you subscribe to your own RSS feed, the key generated will be your private RSS feed. It looks something like this: https://github.com/username.private.actor.atom?token=somehextoken. Unless you would like to expose your private key to the rest of the world, please do not use this key.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/11/13/how-to-create-a-github-feed-for-your-website/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/24/how-to-fix-a-red-cloth-error-while-installing-octopress/">How to Fix a RedCloth Error While Installing Octopress</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -291,156 +231,40 @@ The built-in site functionality works as well.</p>
   
 
 
-<time datetime="2012-10-24T15:35:00-04:00" pubdate data-updated="true">Oct 24<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://octopress.org/">Octopress</a> is a great blogging platform for coders. <em>(Full disclosure: This blog is run on Octopress.)</em> However, when installing, sometimes strange errors come up.  A few weeks ago while setting up our blogs, my classmate <a href="http://innatewonderer.github.com/">Jenya</a> ran into a strange RedCloth error while running bundle install following the <a href="http://octopress.org/docs/setup/">otherwise very comprehensive setup instructions</a> provided by Octopress.</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">An</span> <span class="n">error</span> <span class="n">occured</span> <span class="k">while</span> <span class="n">installing</span> <span class="no">RedCloth</span> <span class="p">(</span><span class="mi">4</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">9</span><span class="p">),</span> <span class="ow">and</span> <span class="no">Bundler</span> <span class="n">cannot</span> <span class="n">continue</span><span class="o">.</span>
-</span><span class='line'><span class="no">Make</span> <span class="n">sure</span> <span class="n">that</span> <span class="sb">`gem install RedCloth -v &#39;4.2.9&#39;`</span> <span class="n">succeeds</span> <span class="n">before</span> <span class="n">bundling</span><span class="o">.</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This was a little intriguing, but not hard to fix.  However, after trying to run gem install RedCloth, we got another error.</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">ERROR</span><span class="p">:</span>  <span class="no">Error</span> <span class="n">installing</span> <span class="no">RedCloth</span><span class="p">:</span>
-</span><span class='line'><span class="no">ERROR</span><span class="p">:</span> <span class="no">Failed</span> <span class="n">to</span> <span class="n">build</span> <span class="n">gem</span> <span class="n">native</span> <span class="n">extension</span><span class="o">.</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="sr">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="n">ruby1</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="mi">3</span> <span class="n">extconf</span><span class="o">.</span><span class="n">rb</span>
-</span><span class='line'>    <span class="sr">/usr/</span><span class="n">lib</span><span class="o">/</span><span class="n">ruby</span><span class="o">/</span><span class="mi">1</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="mi">3</span><span class="o">/</span><span class="n">rubygems</span><span class="o">/</span><span class="n">custom_require</span><span class="o">.</span><span class="n">rb</span><span class="p">:</span><span class="mi">36</span><span class="ss">:in</span> <span class="sb">`require&#39;: cannot load such file -- mkmf (LoadError)</span>
-</span><span class='line'><span class="sb">from /usr/lib/ruby/1.9.3/rubygems/custom_require.rb:36:in `</span><span class="nb">require</span><span class="s1">&#39;</span>
-</span><span class='line'><span class="s1">from extconf.rb:1:in `&lt;main&gt;&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Since gem install had never failed for me when I ran it, I decided to do a little more research.  What actually is RedCloth? Why do we need it?</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/10/24/how-to-fix-a-red-cloth-error-while-installing-octopress/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2012-11-28T18:20:00-05:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
       
-  <header>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2012/10/23/5-easy-guides-to-help-you-get-started-with-github/">5 Easy Guides to Help You Get Started With GitHub</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
+      <div class="sharing">
   
-
-
-<time datetime="2012-10-23T16:52:00-04:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When you first start coding, storing things on your local hard drive is fine. But eventually the nightmares will start visiting you. What happens if your hard drive crashes? How do you collaborate with other people?</p>
-
-<p>Enter <a href="http://git-scm.com/">Git</a> and <a href="https://github.com/">GitHub</a>.  Git is a version control system that helps you branch your code and bring it back together effectively, with a timeline that you can follow easily.  GitHub is a web-based hosting system for projects that use Git. To date, it&#8217;s the most popular system online. But learning to use Git isn&#8217;t easy.  These folks have put together some resources to help get you over that hump a little easier.</p>
-
-<h2>1. <a href="http://try.github.com/">Try GitHub</a></h2>
-
-<p><img class="left" src="/images/Github/1-trygit.png" width="250" height="250" title="Try Git" alt="Try Git">
-The amazing people at <a href="http://www.codeschool.com/">Code School</a> and GitHub have collaborated to make the great GitHub simulator <a href="http://try.github.com/">Try GitHub</a> to get you familiar with the Git syntax. It runs you through basic commands like git init, git status, git add, git commit, and git push. After you&#8217;ve run through this, the syntax doesn&#8217;t feel so foreign anymore.</p>
-
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cjbrock.github.com/blog/2012/11/28/how-to-solve-a-403-nginx-file-download-permission-error/" data-via="cjnboston" data-counturl="http://cjbrock.github.com/blog/2012/11/28/how-to-solve-a-403-nginx-file-download-permission-error/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/10/23/5-easy-guides-to-help-you-get-started-with-github/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/17/ruby-koans-and-nyc-on-rails/">Ruby Koans and NYC on Rails</a></h1>
-    
-    
-      <p class="meta">
-        
+        <a class="basic-alignment left" href="/blog/2012/11/13/how-to-create-a-github-feed-for-your-website/" title="Previous Post: How To Create a Github Feed for Your Website">&laquo; How To Create a Github Feed for Your Website</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-17T12:42:00-04:00" pubdate data-updated="true">Oct 17<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Last night I gave my first <a href="http://vimeo.com/51753999">Ruby presentation</a> to <a href="http://www.meetup.com/nyc-on-rails/">NYC on Rails</a>. I chose to present on the <a href="http://cjbrock.github.com/blog/2012/10/10/5-easy-steps-to-getting-started-with-ruby-koans/">Ruby Koans</a>: how to get started, and my favorite asserts.</p>
-
-<p>Check out the video here:</p>
-
-<div class="embed-video-container"><iframe src="http://player.vimeo.com/video/51753999 "></iframe></div>
-
-
-<p>The slide deck is here:</p>
-
-<script async class="speakerdeck-embed" data-id="507dea38d1e0a4000200cc41" data-ratio="1.2945638432364097" src="//speakerdeck.com/assets/embed.js"></script>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -473,7 +297,7 @@ The amazing people at <a href="http://www.codeschool.com/">Code School</a> and G
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/cjbrock">@cjbrock</a> on GitHub
@@ -503,7 +327,7 @@ The amazing people at <a href="http://www.codeschool.com/">Code School</a> and G
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -523,6 +347,7 @@ The amazing people at <a href="http://www.codeschool.com/">Code School</a> and G
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -537,7 +362,10 @@ The amazing people at <a href="http://www.codeschool.com/">Code School</a> and G
       var disqus_shortname = 'playingbyprogramming';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://cjbrock.github.com/blog/2012/11/28/how-to-solve-a-403-nginx-file-download-permission-error/';
+        var disqus_url = 'http://cjbrock.github.com/blog/2012/11/28/how-to-solve-a-403-nginx-file-download-permission-error/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

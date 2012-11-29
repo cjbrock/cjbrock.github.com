@@ -4,7 +4,7 @@
   <title><![CDATA[Playing By Programming]]></title>
   <link href="http://cjbrock.github.com/atom.xml" rel="self"/>
   <link href="http://cjbrock.github.com/"/>
-  <updated>2012-11-15T14:47:50-05:00</updated>
+  <updated>2012-11-28T19:23:04-05:00</updated>
   <id>http://cjbrock.github.com/</id>
   <author>
     <name><![CDATA[Corinna Brock]]></name>
@@ -12,6 +12,110 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Solve a 403 Nginx File Download Permission Error]]></title>
+    <link href="http://cjbrock.github.com/blog/2012/11/28/how-to-solve-a-403-nginx-file-download-permission-error/"/>
+    <updated>2012-11-28T18:20:00-05:00</updated>
+    <id>http://cjbrock.github.com/blog/2012/11/28/how-to-solve-a-403-nginx-file-download-permission-error</id>
+    <content type="html"><![CDATA[<p>Once the basic functionality of our <a href="http://assignment.io">assignment.io</a> website was implemented, one of the features that we wanted to implement was file upload and download.  The basic upload functionality was surprisingly easy to implement using a gem called <a href="https://github.com/jnicklas/carrierwave">CarrierWave</a>.  The Github page has a pretty thorough walk-through, but if you’re looking to display the content on your website there is a <a href="http://railscasts.com/episodes/253-carrierwave-file-uploads">Railscast</a> on the file upload process.  Both will walk you through the steps of setting it up, and it took us about 20 minutes.</p>
+
+<p>File download was a bit more complex.  While an individual user would only upload one file to be associated with an assignment, the person who assigned the assignment would probably want a way to download all of the submitted work at once.  For this, we implemented a gem called <a href="https://github.com/aussiegeek/rubyzip">RubyZip</a>. If you’re writing a rails app, you don’t need to require ‘rubygems’, but you DO need to require ‘zip/zip’ in your application.rb file.</p>
+
+<p>The RubyZip documentation(http://rubyzip.sourceforge.net/) is pretty dense, but thorough.  With a few modifications, we passed it an array of files, specified the file names, and created a file tree structure so that when the user downloaded the files,  they were organized by submitter and named appropriately.</p>
+
+<figure class='code'><figcaption><span>[Submission Model Code] [] </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">zip_files</span><span class="p">(</span><span class="n">submissions</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">zipfile_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">Rails</span><span class="o">.</span><span class="n">public_path</span><span class="si">}</span><span class="s2">/download/assignments/assignment_</span><span class="si">#{</span><span class="n">submissions</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">user_assignment</span><span class="o">.</span><span class="n">assignment</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">.zip&quot;</span>
+</span><span class='line'>    <span class="no">File</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">zipfile_name</span><span class="p">)</span> <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="n">zipfile_name</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">zip_file</span> <span class="o">=</span> <span class="no">Zip</span><span class="o">::</span><span class="no">ZipFile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">zipfile_name</span><span class="p">,</span> <span class="no">Zip</span><span class="o">::</span><span class="no">ZipFile</span><span class="o">::</span><span class="no">CREATE</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">zipfile</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">submissions</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">submission</span><span class="o">|</span>
+</span><span class='line'>        <span class="c1"># Two arguments:</span>
+</span><span class='line'>        <span class="c1"># - The name of the file as it will appear in the archive</span>
+</span><span class='line'>        <span class="c1"># - The original file, including the path to find it</span>
+</span><span class='line'>        <span class="n">file</span> <span class="o">=</span> <span class="n">submission</span><span class="o">.</span><span class="n">submitted_file</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">path</span>
+</span><span class='line'>          <span class="n">filename</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/.+\/[^\/]/</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>          <span class="n">zipfile</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;assignment_</span><span class="si">#{</span><span class="n">submissions</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">user_assignment</span><span class="o">.</span><span class="n">assignment</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">submission</span><span class="o">.</span><span class="n">user_assignment</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="p">)</span> <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">url</span>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">zipfile_name</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Everything worked on our local host, but when we deployed to our server we got an Nginx 403 permissions error. <img class="right" src="http://cjbrock.github.com/images/chmod/nginx.png" title="Nginx Error" alt="Nginx Error">
+Once we SSH’ed into the server, we saw that the file was being created, but while the owner of the file was allowed to read and write the file, no one else could do anything with it.*</p>
+
+<p><img class="left" src="http://cjbrock.github.com/images/chmod/permissions.png" title="Bad Permissions" alt="Bad Permissions"></p>
+
+<p>Much like you can run chmod in your bash window, Ruby also contains a chmod command.  By adding one line to our code,  we modified our permissions and allowed the user to download the file appropriately.</p>
+
+<figure class='code'><figcaption><span>[Submission Model Code with permissions] [] </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">zip_files</span><span class="p">(</span><span class="n">submissions</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">zipfile_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">Rails</span><span class="o">.</span><span class="n">public_path</span><span class="si">}</span><span class="s2">/download/assignments/assignment_</span><span class="si">#{</span><span class="n">submissions</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">user_assignment</span><span class="o">.</span><span class="n">assignment</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">.zip&quot;</span>
+</span><span class='line'>    <span class="no">File</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">zipfile_name</span><span class="p">)</span> <span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="n">zipfile_name</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">zip_file</span> <span class="o">=</span> <span class="no">Zip</span><span class="o">::</span><span class="no">ZipFile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">zipfile_name</span><span class="p">,</span> <span class="no">Zip</span><span class="o">::</span><span class="no">ZipFile</span><span class="o">::</span><span class="no">CREATE</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">zipfile</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">submissions</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">submission</span><span class="o">|</span>
+</span><span class='line'>        <span class="c1"># Two arguments:</span>
+</span><span class='line'>        <span class="c1"># - The name of the file as it will appear in the archive</span>
+</span><span class='line'>        <span class="c1"># - The original file, including the path to find it</span>
+</span><span class='line'>        <span class="n">file</span> <span class="o">=</span> <span class="n">submission</span><span class="o">.</span><span class="n">submitted_file</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">path</span>
+</span><span class='line'>          <span class="n">filename</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/.+\/[^\/]/</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>          <span class="n">zipfile</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;assignment_</span><span class="si">#{</span><span class="n">submissions</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">user_assignment</span><span class="o">.</span><span class="n">assignment</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">submission</span><span class="o">.</span><span class="n">user_assignment</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="p">)</span> <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">url</span>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="no">File</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="mo">0775</span><span class="p">,</span> <span class="n">zipfile_name</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">zipfile_name</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Returning to the server, you can see that the permissions were appropriately modified, and the user can now download the Zip file of all the files for an assignment.
+<img class="left" src="http://cjbrock.github.com/images/chmod/goodpermissions.png" title="Good Permissions" alt="Good Permissions">
+The built-in site functionality works as well.</p>
+
+<p><em><a href="http://www.dartmouth.edu/~rc/help/faq/permissions.html">This is a great explanation of file permissions in Unix.</a> For purposes of simplicity, I&#8217;ve abstracted away the routing and controller functionality that calls the above method.</em></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How To Create a Github Feed for Your Website]]></title>
